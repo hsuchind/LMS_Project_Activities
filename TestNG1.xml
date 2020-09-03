@@ -1,0 +1,17 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="TestNG Demo Suite1">
+ <listeners>
+        <listener class-name="org.uncommons.reportng.HTMLReporter"/>
+    </listeners>
+    <test name="TestNG Demo Test1">
+        <classes>
+            <class name="projectactivity.activity1" />
+            <class name="projectactivity.activity2" />
+            <class name="projectactivity.activity3" />
+            <class name="projectactivity.activity4" />
+            <class name="projectactivity.activity5" />
+            
+        </classes>
+    </test>
+</suite>
+
