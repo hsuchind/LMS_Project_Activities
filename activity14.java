@@ -26,7 +26,7 @@ public class activity14 {
 		     driver.get("https://alchemy.hguy.co/lms/");
 		   //Resize current window to the set dimension
 		     driver.manage().window().maximize();
-		     driver.manage().timeouts().implicitlyWait(20000, TimeUnit.MILLISECONDS);
+		     driver.manage().timeouts().implicitlyWait(2000, TimeUnit.MILLISECONDS);
 		}	
 	@Test
 	public void Openpage() throws InterruptedException {
@@ -85,15 +85,12 @@ public class activity14 {
 			WebElement prog;
 			prog = driver.findElement(By.xpath("/html/body/div[1]/div/div[2]/div[1]/div[3]/div/div[1]/div/div[1]"));
 			System.out.println("The progress is :" +prog.getText());
-			
-			
-			
-		//TakesScreenshot scrShot =((TakesScreenshot)driver);
-	     // String timeStamp;
-	      //timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime());	        //Call getScreenshotAs method to create image file	                //File SrcFile=scrShot.getScreenshotAs(OutputType.FILE);	            //Move image file to new destination	                //File DestFile=new File("src/test/resources/"+timeStamp+".jpg");	                //Copy file at destination	                //FileUtils.copyFile(SrcFile, DestFile);	
-			
-			
 		    				
 		}
+	
+		@AfterMethod
+	public void CloseBrowser() {
+		driver.close();
+	}
 
 }
