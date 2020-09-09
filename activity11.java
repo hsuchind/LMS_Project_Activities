@@ -4,6 +4,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -11,6 +14,7 @@ import org.testng.annotations.Test;
 public class activity11 {
 	
 WebDriver driver;
+WebDriverWait wait;
 	
 	@BeforeMethod
 	
@@ -40,6 +44,15 @@ public void beforeMethod() {
         driver.findElement(By.xpath("#ld-table-list-item-181 > a:nth-child(1) > span:nth-child(2)")).click();
         
         driver.findElement(By.xpath("/html/body/div[1]/div/div[2]/div[1]/div[4]/div[2]/form/input[4]")).click();
+        
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("/html/body/div[1]/div/div[2]/div[2]/div/div/div[4]/div[2]/form/input[4]")));  
+        driver.findElement(By.xpath("/html/body/div[1]/div/div[2]/div[2]/div/div/div[4]/div[2]/form/input[4]")).click();;
+		
+		wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("/html/body/div[1]/div/div[2]/div[2]/div/div/div[3]/div[2]/form/input[4]")));  
+        driver.findElement(By.xpath("/html/body/div[1]/div/div[2]/div[2]/div/div/div[3]/div[2]/form/input[4]")).click();;
+
+		String Comp_percent = driver.findElement(By.xpath("/html/body/div[1]/div/div/div/main/article/div/div/div/div/div[1]/div[1]/div[1]/div/div[1]")).getText();
+		Assert.assertEquals(Comp_percent, "100% Complete");
         
 	}
 	
